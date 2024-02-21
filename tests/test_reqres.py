@@ -14,8 +14,8 @@ def test_get_user():
 
 
 def test_update_user():
-    name = "Sergey"
-    job = "Teacher"
+    name = "Diana"
+    job = "Doctor"
     response = requests.put("https://reqres.in/api/users/2", data={"name": name, "job": job})
 
     assert response.status_code == 200
