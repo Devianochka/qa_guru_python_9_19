@@ -28,12 +28,15 @@ def test_user_not_found():
     response = requests.get('https://reqres.in/api/users/23')
 
     assert response.status_code == 404
+    body = response.json()
+
+    assert body == {}
 
 
 def test_delete_user():
     response = requests.delete("https://reqres.in/api/users/2")
-
-    assert response.status_code == 204
+    print(response.text)
+    assert response.text == ''
 
 
 def test_user_login_success():
